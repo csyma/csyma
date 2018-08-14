@@ -1,11 +1,11 @@
 {
-  "name": "vue-material-admin",
-  "version": "1.0.0",
-  "description": "A Vue Material Admin Template",
-  "author": "Micahel Wang <wangqiangshen@gmail.com>",
-  "private": true,
+  "name": "Csyber Systems Mother Application (CSYMA)",
+  "version": "2.0.0",
+  "description": "A framework for building applications with familyfe RBAC",
+  "author": "Brian Onang'o <surgbc@gmail.com>",
+  "private": false,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --open --hot --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "confidence": "^3.0.2",
     "font-awesome": "^4.7.0",
     "lodash.truncate": "^4.4.2",
     "nprogress": "^0.2.0",
@@ -21,11 +22,15 @@
     "vee-validate": "^2.0.9",
     "vue": "^2.5.16",
     "vue-fullcalendar": "^1.0.9",
+    "vue-localstorage": "^0.6.2",
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-quill-editor": "^3.0.6",
     "vue-resize": "^0.4.4",
     "vue-router": "^3.0.1",
-    "vuetify": "^1.1.0-alpha.5"
+    "vuetify": "^1.1.0-alpha.5",
+    "vuex": "^3.0.1",
+    "vuex-persist": "^1.4.3",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

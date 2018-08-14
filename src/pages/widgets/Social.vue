@@ -51,11 +51,12 @@
 </template>
 
 <script>
-import NameCard from '@/components/widgets/card/NameCard';
+// import NameCard from '@/components/widgets/card/NameCard';
+// import NameCard from '@/components/widgets/card/NamesCard';
 import ProfileCard from '@/components/widgets/card/ProfileCard';
 export default {
   components: {
-    NameCard,
+    // NameCard,
     ProfileCard
   },
   data () {

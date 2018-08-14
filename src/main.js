@@ -9,22 +9,39 @@ import './theme/default.styl';
 import VeeValidate from 'vee-validate';
 import colors from 'vuetify/es5/util/colors';
 import Truncate from 'lodash.truncate';
+import VueLocalStorage from 'vue-localstorage';
+import Vuex from 'vuex';
+
+import store from '@/store';
+import { sync } from 'vuex-router-sync';
+
 Vue.config.productionTip = false;
 // Helpers
 // Global filters
 Vue.filter('truncate', Truncate);
 Vue.use(VeeValidate, { fieldsBagName: 'formFields' });
+
+Vue.use(Vuex);
+Vue.use(VueLocalStorage);
+
+sync(store, router); // sync the store and router
+
 Vue.use(Vuetify, {
   // theme: {
   //   primary: colors.indigo.base, // #E53935
   //   secondary: colors.indigo.lighten4, // #FFCDD2
   //   accent: colors.indigo.base // #3F51B5
   // },
+  // #3c8dbc
+  theme: {
+    primary: 'red',
+    secondary: 'purple'
+  },
   options: {
     themeVariations: ['primary', 'secondary', 'accent'],
     extra: {
       mainToolbar: {
-        color: 'primary',
+        color: 'secondary',
       },
       sideToolbar: {
       },
@@ -42,6 +59,7 @@ Vue.use(Vuetify, {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });

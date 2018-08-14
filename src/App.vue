@@ -3,7 +3,7 @@
     <template v-if="!$route.meta.public">
       <v-app id="inspire" class="app">
         <app-drawer class="app--drawer"></app-drawer>
-        <app-toolbar class="app--toolbar"></app-toolbar>
+        <app-toolbar class="app--toolbar " style="background: #3c8dbc;" height="45px"></app-toolbar>
         <v-content>
           <!-- Page Header -->
           <page-header v-if="$route.meta.breadcrumb"></page-header>
@@ -12,9 +12,36 @@
           </div>   
            <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
-            <span class="caption">isocked.com Design &copy; {{ new Date().getFullYear() }}</span>
+            <span>
+              <span class="caption"><strong>Copyright &copy; <a href="https://csybersystems.cseco.co.ke" target="blank" style="text-decoration: none;">CSYBER SYSTEMS</a>, {{ new Date().getFullYear() }} </strong></span>
+              <br>
+              <span>Open Sourced Under Apache</span>
+              <br>
+              Built with <v-icon small>favorite</v-icon> by CSYBER SYSTEMS
+            </span>
             <v-spacer></v-spacer>
-            <span class="caption mr-1"> Make With Love </span> <v-icon color="pink" small>favorite</v-icon>
+            <span>
+              <span class="caption"> 
+                <v-btn icon href="https://github.com/tookit/vue-material-admin">
+                  <v-icon small>fa fa-github</v-icon>
+                </v-btn> 
+              </span> 
+              <span class="caption"> 
+                <v-btn icon href="https://github.com/tookit/vue-material-admin">
+                  <v-icon small color="indigo">fa fa-facebook</v-icon>
+                </v-btn> 
+              </span><span class="caption"> 
+                <v-btn icon href="https://github.com/tookit/vue-material-admin">
+                  <v-icon small color="light-blue">fa fa-twitter</v-icon>
+                </v-btn> 
+              </span> 
+              <br>
+              <span class="caption" style="{float:right;}"> <strong>Version</strong> {{version}} </span> 
+
+              <!-- <span class="caption mr-1"> <v-icon small>github</v-icon> </span>  -->
+              <!-- <span class="caption mr-1"> <v-icon small>facebook</v-icon> </span>  -->
+              <!-- <span class="caption mr-1"> <v-icon small>twitter</v-icon> </span>  -->
+            </span>
           </v-footer>
         </v-content>
         <!-- Go to top -->
@@ -24,7 +51,7 @@
           <v-icon>settings</v-icon>
         </v-btn>
         <v-navigation-drawer
-          class="setting-drawer"
+          class="setting-drawer smallHeight"
           temporary
           right
           v-model="rightDrawer"
@@ -73,6 +100,12 @@ export default {
     ThemeSettings
   },
   data: () => ({
+    version: '2.0',
+    builder: {
+      facebook: '',
+      github: 'https://github.com/csybersystems',
+      twitter: ''
+    },
     expanded: true,
     rightDrawer: false,
     snackbar: {
@@ -110,5 +143,11 @@ export default {
     border-radius:0  
   .page-wrapper
     min-height:calc(100vh - 64px - 50px - 81px );  
+  .smallHeight
+    height:45px;
+    margin-top:0px;
+  .toolbar__content
+    height:45px;
+  
 
 </style>

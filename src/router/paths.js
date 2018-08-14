@@ -46,15 +46,15 @@ export default [
     )
   },
   {
-    path: '/login',
+    path: '/account/:action?',
     meta: {
       public: true,
     },
-    name: 'Login',
+    name: 'Account',
     component: () => import(
       /* webpackChunkName: "routes" */
       /* webpackMode: "lazy-once" */
-      `@/pages/Login.vue`
+      `@/pages/Account.vue`
     )
   },
   {
